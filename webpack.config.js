@@ -9,6 +9,11 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: "bundle.js"
   },
+  resolve: {
+    alias: {
+      'moment$': 'moment/moment',
+    }
+  },
   module: {
     loaders: [
       {
@@ -28,6 +33,8 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map ', // makes debugging slightly easier
   devServer: {
-    contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true // need this to fix the 404 error we get on dev
   }
+
 };
