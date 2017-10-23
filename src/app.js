@@ -14,7 +14,7 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-
+console.log('test');
 // Provider - Must include the name of your store
 const jsx = (
   <Provider store={store}>
