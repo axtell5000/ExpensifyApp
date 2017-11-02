@@ -8,6 +8,7 @@ import EditExpensePage from "../components/EditExpensePage";
 import NotFoundPage from "../components/NotFoundPage";
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 // Here we are manually setting our routes,  this allows us to use history() on things that are not part of the
 // route setup
@@ -20,7 +21,7 @@ const AppRouter = () => (
 
       <Switch>
         {/*need exact or else multiple pages/parts will be seen, without it '/create' will be seen as '/' as well*/}
-        <Route path='/' component={LoginPage} exact={true}/>
+        <PublicRoute path='/' component={LoginPage} exact={true}/>
         <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
         <PrivateRoute path='/create' component={AddExpensePage}/>
         <PrivateRoute path='/edit/:id' component={EditExpensePage}/>
