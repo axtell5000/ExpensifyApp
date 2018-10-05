@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import 'react-dates/initialize';
+
 import { SingleDatePicker } from 'react-dates';
 
 const now = moment();
